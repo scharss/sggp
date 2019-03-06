@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>-->
+    <style>
+    #mapContainer{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    </style>
+    <script src="mian.js"></script>
+</head>
+<body>
+    
+        <div id="mapContainer"></div>        
+
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+        <script>
+            //*********************************************
+
+  
+
+
+
+            //**********************************************
+        var map = L.map('mapContainer').setView([3.5289336,-76.2966477 ], 14);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
+
+   var marcas=  L.marker([3.5319457,-76.3168139 ]).addTo(map)
+    .bindPopup('<img src="2m.jpeg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias <a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>'),
+    
+
+
+     marcas2=  L.marker([3.52112,-76.299904 ]).addTo(map)
+    .bindPopup('<img src="1h.jpg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias <a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>');
+   
+    marcas4=  L.marker([3.53112,-76.298934 ]).addTo(map)
+    .bindPopup('<img src="1m.jpg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias <a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>');
+   
+    marcas5=  L.marker([3.5335382,-76.3026989 ]).addTo(map)
+    .bindPopup('<img src="2m.jpeg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias<a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>');
+   
+    
+    var cities = L.layerGroup([marcas, marcas2,marcas4, marcas5]);
+
+    var marcas3=  L.marker([3.52212,-76.288904 ]).addTo(map)
+    .bindPopup('<img src="1m.jpg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias<a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>'),
+    
+
+    marcas7=  L.marker([3.52332,-76.296904 ]).addTo(map)
+    .bindPopup('<img src="2h.jpg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias <a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>'),
+   
+    marcas8=  L.marker([3.52823844,-76.2984856 ]).addTo(map)
+    .bindPopup('<img src="1h.jpg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias<a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>');
+    var cities2 = L.layerGroup([marcas3, marcas7,marcas8]);
+    
+  /*var polygon = L.polygon([
+    [3.52423844,-76.2894856],
+    [3.5332,-76.297904],
+    [3.5212,-76.289904]],{
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    
+}).addTo(map).bindPopup('<img src="22.png" width="100"/>Competencia Palmira es un municipio colombiano del departamento del Valle del Cauca en Colombia; localizado en la región sur del departamento. Es conocido como La Villa de las Palmas<a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Ir aquí</a>'),*/
+
+var circle = L.circle([3.5347057, -76.2886028], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(map).bindPopup('<img src="22.png" width="100"/>Competencia en esta zona lleva ventaja la competencia<a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas</a>'), 
+
+circle2 = L.circle([3.5409752, -76.3016519], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(map).bindPopup('<img src="22.png" width="100"/>Competencia en esta zona lleva ventaja la competencia<a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas</a>');
+
+var competenciax = L.layerGroup([ circle, circle2]);
+
+
+    var overlayMaps = {
+    "Grupo Zona1": cities,
+    
+    "Grupo Zona2": cities2,
+    "Competencia": competenciax
+    
+   
+    
+};
+
+
+
+L.control.layers(overlayMaps).addTo(map);
+
+     </script>
+
+
+
+</body>
+</html>
