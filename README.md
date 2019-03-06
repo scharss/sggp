@@ -1,1 +1,1 @@
-# sggp
+# Sistema de Gestión Geopolítico
