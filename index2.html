@@ -54,19 +54,31 @@
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
+            
+            
+            var redicon = L.icon({
+    iconUrl: 'redicon.png',
+    
 
-   var marcas=  L.marker([3.5319457,-76.3168139 ]).addTo(map)
+    iconSize:     [28, 40], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+   var marcas=  L.marker([3.5319457,-76.3168139 ],{icon: redicon}).addTo(map)
     .bindPopup('<img src="2m.jpeg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias <a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>'),
     
 
 
-     marcas2=  L.marker([3.52112,-76.299904 ]).addTo(map)
+     marcas2=  L.marker([3.52112,-76.299904 ],{icon: redicon}).addTo(map)
     .bindPopup('<img src="1h.jpg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias <a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>');
    
-    marcas4=  L.marker([3.53112,-76.298934 ]).addTo(map)
+    marcas4=  L.marker([3.53112,-76.298934 ],{icon: redicon}).addTo(map)
     .bindPopup('<img src="1m.jpg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias <a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>');
    
-    marcas5=  L.marker([3.5335382,-76.3026989 ]).addTo(map)
+    marcas5=  L.marker([3.5335382,-76.3026989 ],{icon: redicon}).addTo(map)
     .bindPopup('<img src="2m.jpeg" width="100"/>Responsable: Lider de la Comunidad responsable de organización y covocatorias<a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas de Gestión</a>');
    
     
